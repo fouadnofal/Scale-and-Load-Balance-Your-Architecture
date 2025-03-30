@@ -241,39 +241,4 @@ Click the OK alarm, which has AlarmHigh in its name.
 
 The OK indicates that the alarm has not been triggered. It is the alarm for CPU Utilization > 60, which will add instances when average CPU is high. The chart should show very low levels of CPU at the moment.
 
-You will now tell the application to perform calculations that should raise the CPU level.
 
-Return to the browser tab with the web application.
-
-Click Load Test beside the AWS logo.
-
-This will cause the application to generate high loads. The browser page will automatically refresh so that all instances in the Auto Scaling group will generate load. Do not close this tab.
-
-Return to browser tab with the CloudWatch console.
-
-In less than 5 minutes, the AlarmLow alarm should change to OK and the AlarmHigh alarm status should change to ALARM.
-
- You can click Refresh  in the top-right every 60 seconds to update the display.
-
-You should see the AlarmHigh chart indicating an increasing CPU percentage. Once it crosses the 60% line for more than 3 minutes, it will trigger Auto Scaling to add additional instances.
-
-Wait until the AlarmHigh alarm enters the ALARM state.
-
-You can now view the additional instance(s) that were launched.
-
-In the AWS Management Console, select the  Services menu, and then select EC2 under Compute.
-
-In the left navigation pane, click Instances.
-
-More than two instances labeled Lab Instance should now be running. The new instance(s) were created by Auto Scaling in response to the Alarm.
-
- 
-
-Task 6: Terminate Web Server 1
-In this task, you will terminate Web Server 1. This instance was used to create the AMI used by your Auto Scaling group, but it is no longer needed.
-
-Select  Web Server 1 (and ensure it is the only instance selected).
-
-In the Actions  menu, click Instance State > Terminate.
-
-Click Yes, Terminate
